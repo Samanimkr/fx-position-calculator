@@ -14,17 +14,21 @@
     <form>
         <ul>
             <li>
-                <input type="text" name="accountsize" placeholder="Account Size" />
+                <label for="accountsize">Account Size (£)</label>
+                <input type="text" name="accountsize" placeholder="500" />
             </li>
             <li>
-                <input type="text" name="pips" placeholder="Stop Loss Pips" />
+                <label for="riskpercentage">Risk Percentage (%)</label>
+                <input type="text" name="riskpercentage" placeholder="2" />
             </li>
             <li>
-                <input type="text" name="currency1" placeholder="Currency 1" />
-                <input type="text" name="currency2" placeholder="Currency 2" />
+                <label for="riskpercentage">Stop Loss Pips</label>
+                <input type="text" name="pips" placeholder="30" />
             </li>
             <li>
-                <input type="text" name="riskpercentage" placeholder="Risk Percentage" />
+                <label for="currency1">Currency Pair Traded</label>
+                <input type="text" name="currency1" placeholder="GBP" />
+                <input type="text" name="currency2" placeholder="USD" />
             </li>
             <li>
                 <input type="button" onclick="calculate()" value="Calculate" />
