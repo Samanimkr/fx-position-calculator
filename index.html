@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FX Position Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <form>
+        <ul>
+            <li>
+                <input type="text" name="accountsize" placeholder="Account Size" />
+            </li>
+            <li>
+                <input type="text" name="pips" placeholder="Stop Loss Pips" />
+            </li>
+            <li>
+                <input type="text" name="currency1" placeholder="Currency 1" />
+                <input type="text" name="currency2" placeholder="Currency 2" />
+            </li>
+            <li>
+                <input type="text" name="riskpercentage" placeholder="Risk Percentage" />
+            </li>
+            <li>
+                <input type="button" onclick="calculate()" value="Calculate" />
+            </li>
+        </ul>
+    </form>
+    
+</body>
+</html>
