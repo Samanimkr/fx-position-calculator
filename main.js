@@ -1,14 +1,16 @@
-
+const API_KEY = 'K8SVFGG987OJSE6W';
 
 const calculate = () => {
     const accountSize = document.getElementsByName('accountsize')[0].value;
     const riskPercentage = document.getElementsByName('riskpercentage')[0].value;
     const pips = document.getElementsByName('pips')[0].value;
-    const currency1 = document.getElementsByName('currency1')[0].value.toUpperCase();
-    const currency2 = document.getElementsByName('currency2')[0].value.toUpperCase();
+    const quoteCurrency = document.getElementsByName('quotecurrency')[0].value.toUpperCase();
+
+    const units = document.getElementsByName('units')[0];
+    const lotSize = document.getElementsByName('lotsize')[0];
 
     const baseURL = `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE`;
-    const symbol = `from_currency=${currency1}&to_currency=${currency2}`;
+    const symbol = `from_currency=GBP&to_currency=${quoteCurrency}`;
     const apikey = `apikey=${API_KEY}`;
     
     axios
@@ -17,14 +19,13 @@ const calculate = () => {
         const exchangeRate = data['Realtime Currency Exchange Rate']['5. Exchange Rate'];
 
         const willingToRisk = (accountSize / 100) * riskPercentage;
-        const pipsInCurrency2 = pips / 10000;
-        const amountInGBP = pipsInCurrency2 / exchangeRate;
+        const amountInGBP = (pips / 10000) / exchangeRate;
 
-        const units = Math.floor(willingToRisk / amountInGBP);
-        const lotSize = units / 100000;
+        const amountOfUnits = Math.floor(willingToRisk / amountInGBP);
+        const lotSizeResult = amountOfUnits / 100000;
 
-        console.log('units', units);
-        console.log('lotSize', lotSize);
+        units.value = amountOfUnits;
+        lotSize.value = lotSizeResult;
     })
     .catch(e => console.log('e: ', e))
 }
