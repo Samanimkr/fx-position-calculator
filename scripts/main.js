@@ -1,3 +1,4 @@
+const API_KEY = 'K8SVFGG987OJSE6W';
 
 const calculate = () => {
     const accountSize = document.getElementsByName('accountsize')[0].value;

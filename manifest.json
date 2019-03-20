@@ -1,0 +1,20 @@
+{
+    "short_name": "FX Calculator",
+    "name": "FX Position Calculator",
+    "icons": [
+        {
+            "src":"/images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src":"/favicon.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/index.html",
+    "background_color": "#e05a47",
+    "theme_color": "#e05a47",
+    "display": "standalone"
+  }
