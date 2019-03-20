@@ -24,7 +24,13 @@ form {
     padding: 0;
 }
 
-@media only screen and (max-width: 600px) {
+#error-message {
+    display: none;
+    color: red;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 900px) {
     .navbar-brand {
         margin: 0 auto;
     }

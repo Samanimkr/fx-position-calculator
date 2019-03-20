@@ -1,4 +1,3 @@
-const API_KEY = 'K8SVFGG987OJSE6W';
 
 const calculate = () => {
     const accountSize = document.getElementsByName('accountsize')[0].value;
@@ -27,5 +26,13 @@ const calculate = () => {
         units.value = amountOfUnits;
         lotSize.value = lotSizeResult;
     })
-    .catch(e => console.log('e: ', e))
+    .catch(e => {
+        console.log('e: ', e)
+        const errorMsg = document.getElementById('error-message');
+        errorMsg.style.display = 'inline-block';
+
+        setTimeout(() => {
+            errorMsg.style.display = 'none';
+        }, 2000);
+    })
 }
